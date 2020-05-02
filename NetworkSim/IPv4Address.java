@@ -49,6 +49,21 @@ public class IPv4Address {
         return String.format("%d.%d.%d.%d", byte3 & 0xFF, byte2 & 0xFF, byte1 & 0xFF, byte0 & 0xFF); // The &0xFF is a hack to get Java to print an unsigned value
     }
 
+    public IPv4Address and(IPv4Address other) {
+        return new IPv4Address(this.address & other.address);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof IPv4Address)) {
+            return false;
+        }
+
+        IPv4Address ip = (IPv4Address) other;
+
+        return this.address == ip.address;
+    }
+
     private boolean fitsInByte(short s) {
         return (0 <= s && s <= 255);
     }

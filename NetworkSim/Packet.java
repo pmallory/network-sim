@@ -4,10 +4,10 @@ import java.net.Inet4Address;
 
 class Packet {
 
-	private IPv4Address src_ip;
-	private IPv4Address dest_ip;
-	private int dest_port;
-	private String payload;
+	public IPv4Address src_ip;
+	public IPv4Address dest_ip;
+	public int dest_port;
+	public String payload;
 
 	public Packet(IPv4Address src_ip, IPv4Address dest_ip, int dest_port, String payload) {
 		this.src_ip = src_ip;
